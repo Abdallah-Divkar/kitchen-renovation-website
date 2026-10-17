@@ -1,146 +1,153 @@
 # Kitchen Renovation Website
 
-A web application for a kitchen renovation business. The project is organized into a client-facing frontend and a server-side backend.
+A website for a kitchen renovation business: custom kitchen cabinets, bathroom vanities, closets and wardrobes, and countertops, serving Toronto, Markham, Richmond Hill, Vaughan, and Scarborough. The project is split into a client-facing frontend and a separate server-side backend.
+
+## Status
+
+Frontend development comes first. The backend (`server/`) is intentionally empty for now and its stack has not been chosen.
+
+## Tech Stack
+
+| Part | Technology |
+|---|---|
+| Frontend (`client/`) | Next.js (App Router), React, TypeScript, Tailwind CSS |
+| Backend (`server/`) | To be decided |
+| Design | Figma wireframes (Option A: traditional nav bar, Option B: burger menu) |
 
 ## Project Structure
 
-```text
+```
 kitchen-renovation-website/
-├── client/       # Frontend application
-├── server/       # Backend application and API
+├── client/                     # Frontend application (Next.js)
+│   ├── public/
+│   │   └── images/             # Hero, products, materials, projects, logo
+│   └── src/
+│       ├── app/                # Routes (App Router)
+│       │   ├── layout.tsx      # Header + footer wrapper
+│       │   ├── page.tsx        # Home
+│       │   ├── products/
+│       │   ├── areas/
+│       │   ├── projects/
+│       │   ├── about/
+│       │   └── contact/
+│       ├── components/
+│       │   ├── layout/         # Header, MobileMenu, Footer
+│       │   ├── ui/             # Button, Card, SectionHeading
+│       │   ├── home/           # Hero, Intro, FeaturedProjects, WhyChooseUs, QuoteBand
+│       │   ├── products/       # ProductCard, MaterialCard
+│       │   ├── areas/          # CityCard
+│       │   ├── projects/       # FilterBar, ProjectGallery
+│       │   ├── about/          # Stats, Values, Showroom
+│       │   ├── contact/        # QuoteForm, ContactInfo, Map
+│       │   └── shared/         # Components used on several pages (Testimonials)
+│       ├── data/               # Site content: products, materials, cities, projects, testimonials, nav
+│       ├── lib/                # Utilities
+│       └── types/              # Shared TypeScript types
+├── server/                     # Backend application and API (not started)
 ├── .gitignore
 └── README.md
 ```
 
+### Pages
+
+| Route | Page |
+|---|---|
+| `/` | Home |
+| `/products` | Products and "Materials We Use" |
+| `/areas` | Areas We Serve (one card per city) |
+| `/projects` | Project gallery with filters |
+| `/about` | About |
+| `/contact` | Quote request form, contact info, map |
+
+Navigation links collapse into a hamburger menu below roughly 1024px.
+
+### Content lives in `client/src/data/`
+
+Product names, cities, projects, testimonials, and nav links are stored as data files rather than hard-coded in components. Product names are still placeholders pending client confirmation, so update them there.
+
 ## Prerequisites
 
-Before running the project, make sure you have:
-
-- [Git](https://git-scm.com/downloads)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- The runtime and dependencies required by the client and server (to be documented as the stack is finalized).
+* [Git](https://git-scm.com/downloads)
+* [Node.js](https://nodejs.org/) (current LTS) and npm
+* [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Getting Started
 
 ### 1. Clone the repository
 
-```bash
+```
 git clone https://github.com/Abdallah-Divkar/kitchen-renovation-website.git
 cd kitchen-renovation-website
 ```
 
-### 2. Set up the client
+### 2. Run the client
 
-Navigate to the client directory:
-
-```bash
+```
 cd client
+npm install
+npm run dev
 ```
 
-Install dependencies and start the frontend using the commands specified by the project's framework and its package or dependency configuration.
+The site runs at [http://localhost:3000](http://localhost:3000).
 
-### 3. Set up the server
+Other useful commands, run from `client/`:
 
-Open a separate terminal at the project root and navigate to the server directory:
+| Command | What it does |
+|---|---|
+| `npm run build` | Create a production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-```bash
-cd server
-```
+### 3. Run the server
 
-Install the required backend dependencies, configure any required environment variables, and start the server according to the backend framework's instructions.
-
-> **Note:** Exact installation, startup, and testing commands will be added once the frontend and backend technologies are selected and their configuration files are available.
+The backend has not been set up yet. Setup instructions will be added here once its stack is chosen.
 
 ## Testing
 
-Before submitting changes:
+Before pushing changes:
 
-1. Run the available frontend and backend tests.
-2. Verify that the client starts successfully.
-3. Verify that the server starts and its API endpoints respond as expected.
-4. Test the integration between the client and server.
-5. Check for errors in the terminal and browser console.
+1. Run `npm run lint` and `npm run build` in `client/` and fix any errors.
+2. Verify the client starts with `npm run dev`.
+3. Check the pages you changed at desktop and mobile widths, including the hamburger menu below about 1024px.
+4. Check the terminal and browser console for errors.
+
+Once the server exists, also verify that it starts, its endpoints respond, and the client integrates with it.
 
 ## Development Guidelines
 
-- Keep frontend code in `client/` and backend code in `server/`.
-- Never commit secrets, passwords, API keys, or private environment files.
-- Document required environment variables in an `.env.example` file without including real credentials.
-- Use descriptive commit messages.
-- Test changes before pushing them to the repository.
+* Keep frontend code in `client/` and backend code in `server/`.
+* Put site content (product names, cities, projects, and so on) in `client/src/data/`, not inside components.
+* Never commit secrets, passwords, API keys, or private environment files.
+* Document required environment variables in an `.env.example` file without real credentials.
+* Use descriptive commit messages (for example `feat: add products page`).
+* Test changes before pushing.
 
-## Contributing
+## Workflow
 
-### 1. Fork the repository
+Both developers work in this repository directly using feature branches.
 
-1. Open the [Kitchen Renovation Website repository](https://github.com/Abdallah-Divkar/kitchen-renovation-website).
-2. Click **Fork** in the upper-right corner.
-3. Select your GitHub account as the destination and create the fork.
+1. Pull the latest `main`:
 
-### 2. Clone your fork
+   ```
+   git switch main
+   git pull
+   ```
 
-Replace `YOUR-USERNAME` with your GitHub username.
+2. Create a feature branch:
 
-```bash
-git clone https://github.com/YOUR-USERNAME/kitchen-renovation-website.git
-cd kitchen-renovation-website
-```
+   ```
+   git switch -c feature/your-feature-name
+   ```
 
-### 3. Configure the original repository
+3. Make and test your changes, then commit and push:
 
-Add the original repository as an upstream remote so you can retrieve future updates.
+   ```
+   git add .
+   git commit -m "feat: describe your changes"
+   git push -u origin feature/your-feature-name
+   ```
 
-```bash
-git remote add upstream https://github.com/Abdallah-Divkar/kitchen-renovation-website.git
-git remote -v
-```
-
-- `origin` points to your fork.
-- `upstream` points to the original repository.
-
-### 4. Create a feature branch
-
-```bash
-git switch -c feature/your-feature-name
-```
-
-Use a descriptive branch name that reflects your changes.
-
-### 5. Make and test your changes
-
-Install the required client and server dependencies, run the application, and test your changes before committing.
-
-### 6. Commit and push your changes
-
-```bash
-git add .
-git commit -m "feat: describe your changes"
-git push -u origin feature/your-feature-name
-```
-
-### 7. Open a pull request
-
-1. Open your fork on GitHub.
-2. Select **Contribute** or **Compare & pull request**.
-3. Set the base repository to `Abdallah-Divkar/kitchen-renovation-website` and the base branch to `main`.
-4. Set the head repository to your fork and select your feature branch.
-5. Describe your changes and submit the pull request for review.
-
-Pull requests are reviewed before changes are merged into the original repository.
-
-### Keeping your fork updated
-
-To retrieve the latest changes from the original repository:
-
-```bash
-git switch main
-git fetch upstream
-git merge upstream/main
-git push origin main
-```
-
-Resolve any merge conflicts before pushing if necessary.
-
+4. Open a pull request into `main` on GitHub and have the other developer review it before merging.
 
 ## License
 
