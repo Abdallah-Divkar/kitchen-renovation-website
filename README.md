@@ -10,7 +10,7 @@ Frontend development comes first. The backend (`server/`) is intentionally empty
 
 | Part | Technology |
 |---|---|
-| Frontend (`client/`) | Next.js (App Router), React, TypeScript, Tailwind CSS |
+| Frontend (`client/`) | Next.js (App Router), React, JavaScript, Tailwind CSS |
 | Backend (`server/`) | To be decided |
 | Design | Figma wireframes (Option A: traditional nav bar, Option B: burger menu) |
 
@@ -23,8 +23,8 @@ kitchen-renovation-website/
 │   │   └── images/             # Hero, products, materials, projects, logo
 │   └── src/
 │       ├── app/                # Routes (App Router)
-│       │   ├── layout.tsx      # Header + footer wrapper
-│       │   ├── page.tsx        # Home
+│       │   ├── layout.js      # Header + footer wrapper
+│       │   ├── page.js        # Home
 │       │   ├── products/
 │       │   ├── areas/
 │       │   ├── projects/
@@ -41,8 +41,7 @@ kitchen-renovation-website/
 │       │   ├── contact/        # QuoteForm, ContactInfo, Map
 │       │   └── shared/         # Components used on several pages (Testimonials)
 │       ├── data/               # Site content: products, materials, cities, projects, testimonials, nav
-│       ├── lib/                # Utilities
-│       └── types/              # Shared TypeScript types
+│       └── lib/                # Utilities
 ├── server/                     # Backend application and API (not started)
 ├── .gitignore
 └── README.md
