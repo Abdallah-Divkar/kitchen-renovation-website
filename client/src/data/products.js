@@ -25,4 +25,20 @@ export const products = [
     image: "/images/products/placeholder.jpg",
     imageAlt: "Bathroom vanity",
   },
+  {
+    slug: "closets-and-wardrobes",
+    name: "Closets and Wardrobes",
+    summary:
+      "Custom closet systems and wardrobes that organize your clothing and make the most of every inch.",
+    image: "/images/products/placeholder.jpg",
+    imageAlt: "Custom closet and wardrobe",
+  },
+  {
+    slug: "countertops",
+    name: "Countertops",
+    summary:
+      "Durable, beautiful countertops precisely templated and professionally installed.",
+    image: "/images/products/placeholder.jpg",
+    imageAlt: "Kitchen countertop",
+  },
 ];
