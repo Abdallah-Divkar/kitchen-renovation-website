@@ -22,22 +22,22 @@
  * @type {Reason[]}
  */
 export const whyChooseUs = [
-    {
-        title: "Built in-house",
-        description: "TODO: client to confirm (own manufacturing).",
-    },
-    {
-        title: "Quality craftsmanship",
-        description: "TODO: client to provide.",
-    },
-    {
-        title: "On-time delivery",
-        description: "TODO: client to provide.",
-    },
-    {
-        title: "Warranty",
-        description: "TODO: client to confirm warranty length.",
-    },
+  {
+    title: "Built in-house",
+    description: "TODO: client to confirm (own manufacturing).",
+  },
+  {
+    title: "Quality craftsmanship",
+    description: "TODO: client to provide.",
+  },
+  {
+    title: "On-time delivery",
+    description: "TODO: client to provide.",
+  },
+  {
+    title: "Warranty",
+    description: "TODO: client to confirm warranty length.",
+  },
 ];
 
 /**
@@ -45,18 +45,18 @@ export const whyChooseUs = [
  * @type {Value[]}
  */
 export const values = [
-    {
-        title: "Craftsmanship",
-        description: "TODO: client to provide.",
-    },
-    {
-        title: "Honesty",
-        description: "TODO: client to provide.",
-    },
-    {
-        title: "Customer first",
-        description: "TODO: client to provide.",
-    },
+  {
+    title: "Craftsmanship",
+    description: "TODO: client to provide.",
+  },
+  {
+    title: "Honesty",
+    description: "TODO: client to provide.",
+  },
+  {
+    title: "Customer first",
+    description: "TODO: client to provide.",
+  },
 ];
 
 /**
@@ -64,8 +64,8 @@ export const values = [
  * @type {Stat[]}
  */
 export const stats = [
-    { value: "TODO", label: "Years of experience" },
-    { value: "TODO", label: "Projects completed" },
-    { value: "TODO", label: "Year established" },
-    { value: "TODO", label: "Warranty" },
+  { value: "TODO", label: "Years of experience" },
+  { value: "TODO", label: "Projects completed" },
+  { value: "TODO", label: "Year established" },
+  { value: "TODO", label: "Warranty" },
 ];
