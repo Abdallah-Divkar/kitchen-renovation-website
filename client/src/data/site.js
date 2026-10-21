@@ -13,28 +13,28 @@
 
 /** @type {SiteInfo} */
 export const site = {
-    name: "TODO: Business Name",
-    tagline: "TODO: client tagline",
-    phone: "TODO: (000) 000-0000",
-    phoneHref: "+10000000000",
-    whatsapp: "",
-    email: "todo@example.com",
-    address: {
-        street: "TODO: street address",
-        city: "TODO",
-        province: "ON",
-        postalCode: "TODO",
-    },
-    hours: [
-        { days: "Monday - Friday", hours: "TODO" },
-        { days: "Saturday", hours: "TODO" },
-        { days: "Sunday", hours: "TODO" },
-    ],
-    social: [
-        { label: "Instagram", href: "#" },
-        { label: "Facebook", href: "#" },
-        { label: "Houzz", href: "#" },
-        { label: "TikTok", href: "#" },
-        { label: "Google Business Profile", href: "#" },
-    ],
+  name: "TODO: Business Name",
+  tagline: "TODO: client tagline",
+  phone: "TODO: (000) 000-0000",
+  phoneHref: "+10000000000",
+  whatsapp: "",
+  email: "todo@example.com",
+  address: {
+    street: "TODO: street address",
+    city: "TODO",
+    province: "ON",
+    postalCode: "TODO",
+  },
+  hours: [
+    { days: "Monday - Friday", hours: "TODO" },
+    { days: "Saturday", hours: "TODO" },
+    { days: "Sunday", hours: "TODO" },
+  ],
+  social: [
+    { label: "Instagram", href: "#" },
+    { label: "Facebook", href: "#" },
+    { label: "Houzz", href: "#" },
+    { label: "TikTok", href: "#" },
+    { label: "Google Business Profile", href: "#" },
+  ],
 };

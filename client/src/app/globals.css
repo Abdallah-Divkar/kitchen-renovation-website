@@ -1,28 +1,29 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Colors: placeholders until the client sends brand colors */
-  --color-primary: #1f3a5f;
-  --color-primary-dark: #162a45;
-  --color-accent: #c8963e;
+  /* Colors: neutral wireframe values until the client sends brand colors */
+  --color-primary: #222222; /* buttons, dark bands */
+  --color-primary-dark: #111111;
+  --color-accent: #c8963e; /* not used in the wireframe yet */
   --color-accent-dark: #a97c2d;
 
   --color-ink: #1c1c1c; /* main text */
   --color-muted: #6b7280; /* secondary text */
   --color-surface: #ffffff; /* page background */
-  --color-surface-alt: #f5f3ef; /* alternating section background */
-  --color-line: #e5e1d8; /* borders and dividers */
+  --color-surface-alt: #f5f5f5; /* alternating section background */
+  --color-line: #e5e5e5; /* borders and dividers */
+  --color-placeholder: #d9d9d9; /* image placeholder boxes */
 
-  /* Fonts (loaded with next/font in layout.js) */
+  /* Fonts: one family for body and headings, as in the wireframe */
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-display), ui-serif, Georgia, serif;
+  --font-heading: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 
   /* Radii */
-  --radius-button: 0.5rem;
-  --radius-card: 1rem;
+  --radius-button: 0.25rem;
+  --radius-card: 0.25rem;
 
-  /* Shadow */
-  --shadow-card: 0 4px 20px rgb(0 0 0 / 0.08);
+  /* Shadow: very subtle, cards rely on their border */
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04);
 }
 
 body {
