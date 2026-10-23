@@ -4,11 +4,11 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-export const metadata = { title: "UI Test" };
+export const metadata = { title: "UI Test", robots: { index: false } }; // {robots} = This page is for testing UI components and should not be indexed by search engines MQ.
 
 export default function UiTestPage() {
   return (
-    <main>
+    <div>
       <Section
         title="Buttons"
         subtitle="Primary, secondary and outline in each mode"
@@ -70,6 +70,6 @@ export default function UiTestPage() {
           Container: dashed outline shows the max width and side padding.
         </Container>
       </Section>
-    </main>
+    </div>
   );
 }

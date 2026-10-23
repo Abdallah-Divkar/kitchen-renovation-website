@@ -1,3 +1,5 @@
+export const metadata = { title: "Products" };
+
 export default function ProductsPage() {
-  return <main>Products</main>;
+  return <div>Products</div>;
 }
