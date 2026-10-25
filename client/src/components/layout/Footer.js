@@ -9,8 +9,10 @@ import { cn } from "@/lib/cn";
 // Hard-coded for now: Cache Components may reject reading the current date here
 const copyrightYear = 2026;
 
+// "Projects" sits under the Products column in the design, so it's picked out of navLinks.AD
 const projectsLink = navLinks.find((link) => link.href === "/projects");
 
+// Light focus ring: the header's dark ring would be invisible on this background.AD
 const linkClass =
   "rounded-sm hover:text-surface hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface";
 const headingClass = "text-base font-semibold text-surface";
@@ -23,7 +25,7 @@ export default function Footer() {
     <footer className="bg-footer text-footer-text pt-18 pb-8">
       <Container>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
-          {/* Brand: the business name stands in for the logo until it arrives */}
+          {/* Brand: the business name stands in for the logo until it arrives.AD */}
           <div className="flex flex-col gap-3.5">
             <Link
               href="/"
@@ -116,7 +118,7 @@ export default function Footer() {
           <p>
             © {copyrightYear} {site.name}. All rights reserved.
           </p>
-          {/* Placeholder text until a privacy policy page exists */}
+          {/* Placeholder text until a privacy policy page exists.AD */}
           <p>Privacy Policy</p>
         </div>
       </Container>
