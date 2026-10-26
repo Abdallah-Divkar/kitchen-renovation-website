@@ -14,6 +14,12 @@
   --color-line: #e5e5e5; /* borders and dividers */
   --color-placeholder: #d9d9d9; /* image placeholder boxes */
 
+  /* Footer */
+  --color-footer: #1f1f1f; /* footer background */
+  --color-footer-text: #bfbfbf; /* footer body text and links */
+  --color-footer-muted: #999999; /* copyright line */
+  --color-footer-line: #4d4d4d; /* divider above the bottom bar */
+
   /* Fonts: one family for body and headings, as in the wireframe */
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-body), ui-sans-serif, system-ui, sans-serif;
