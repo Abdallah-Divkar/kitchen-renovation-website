@@ -5,6 +5,7 @@
  * @property {string} summary   1-2 sentences
  * @property {string} image     Path under /public, e.g. "/images/cities/toronto.jpg"
  * @property {string} imageAlt
+ * @property {string[]} [tags]  Shown on the city card, e.g. ["Kitchens", "Cabinets"]
  */
 
 /** @type {City[]} */
@@ -16,6 +17,7 @@ export const cities = [
       "Custom cabinetry, vanities, closets and countertops for homes and condos across Toronto.",
     image: "/images/cities/placeholder.jpg",
     imageAlt: "Toronto skyline",
+    tags: ["Kitchens", "Cabinets"],
   },
   {
     slug: "markham",
@@ -24,6 +26,7 @@ export const cities = [
       "Kitchen and bathroom renovations tailored to Markham homes, from design to installation.",
     image: "/images/cities/placeholder.jpg",
     imageAlt: "Markham neighbourhood",
+    tags: ["Kitchens", "Cabinets"],
   },
   {
     slug: "richmond-hill",
@@ -32,6 +35,7 @@ export const cities = [
       "Quality craftsmanship and personal service for Richmond Hill homeowners.",
     image: "/images/cities/placeholder.jpg",
     imageAlt: "Richmond Hill neighbourhood",
+    tags: ["Kitchens", "Cabinets"],
   },
   {
     slug: "vaughan",
@@ -40,6 +44,7 @@ export const cities = [
       "Custom kitchens, vanities and wardrobes for Vaughan's growing communities.",
     image: "/images/cities/placeholder.jpg",
     imageAlt: "Vaughan neighbourhood",
+    tags: ["Kitchens", "Cabinets"],
   },
   {
     slug: "scarborough",
@@ -48,5 +53,6 @@ export const cities = [
       "Renovation solutions for Scarborough homes, built to fit your space and budget.",
     image: "/images/cities/placeholder.jpg",
     imageAlt: "Scarborough neighbourhood",
+    tags: ["Kitchens", "Cabinets"],
   },
 ];

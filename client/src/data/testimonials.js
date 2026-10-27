@@ -4,6 +4,7 @@
  * @property {string} name
  * @property {string} city
  * @property {string} quote
+ * @property {number} [rating]  1–5 stars from the real review. Leave out until real reviews arrive.
  */
 
 // TODO: placeholders. Replace with real client testimonials before launch.
