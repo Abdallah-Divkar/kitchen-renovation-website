@@ -28,3 +28,11 @@ export const projects = [
     imageAlt: "Modern custom kitchen in Toronto",
   },
 ];
+
+/**
+ * Display label for a project's category, e.g. "kitchens" → "Kitchens".
+ * @param {Project["category"]} value
+ */
+export function getCategoryLabel(value) {
+  return projectCategories.find((c) => c.value === value)?.label ?? "";
+}
