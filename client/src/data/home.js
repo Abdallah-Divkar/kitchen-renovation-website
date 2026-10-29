@@ -24,8 +24,8 @@ export const homeCopy = {
     subtitle: "Custom-made in our own shop for your kitchen and home.",
     linkLabel: "View products",
   },
-  featuredGallery: {
-    title: "Featured Gallery",
+  featuredProjects: {
+    title: "Featured Projects",
     subtitle: "A few of our recent projects across the GTA.",
     buttonLabel: "View the Gallery",
   },
