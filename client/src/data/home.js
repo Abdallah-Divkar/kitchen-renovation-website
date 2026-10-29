@@ -5,7 +5,7 @@
  */
 export const homeCopy = {
   hero: {
-    image: "/images/home/placeholder.jpg",
+    image: "/images/home/testImage.jpg",
     imageAlt: "Finished custom kitchen",
     secondaryLabel: "View Our Gallery",
   },
@@ -16,6 +16,8 @@ export const homeCopy = {
     // TODO: client to confirm the intro wording
     text: "We design, manufacture and install custom kitchen cabinets and renovations for homes across Toronto and the GTA.",
     linkLabel: "Learn more about us",
+    image: "/images/workshop/placeholder.jpg",
+    imageAlt: "Workshop or showroom",
   },
   products: {
     title: "Our Products",
