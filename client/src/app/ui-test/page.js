@@ -7,8 +7,8 @@ import ProductCard from "@/components/shared/ProductCard";
 import { products } from "@/data/products";
 import CityCard from "@/components/shared/CityCard";
 import { cities } from "@/data/cities";
-import ProjectCard from "@/components/shared/ProjectCard";
-import { getCategoryLabel, projects } from "@/data/projects";
+import GalleryCard from "@/components/shared/GalleryCard";
+import { getCategoryLabel, galleryItems } from "@/data/gallery";
 import TestimonialCard from "@/components/shared/TestimonialCard";
 import Testimonials from "@/components/shared/Testimonials";
 import { testimonials } from "@/data/testimonials";
@@ -87,12 +87,12 @@ export default function UiTestPage() {
 
       <Section
         alt
-        title="ProjectCard"
-        subtitle="projects.js has only one entry: check the grid with one card."
+        title="GalleryCard"
+        subtitle="gallery.js has only one entry: check the grid with one card."
       >
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard
+          {galleryItems.map((project) => (
+            <GalleryCard
               key={project.slug}
               {...project}
               type={getCategoryLabel(project.category)}

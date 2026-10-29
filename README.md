@@ -8,11 +8,11 @@ Frontend development comes first. The backend (`server/`) is intentionally empty
 
 ## Tech Stack
 
-| Part | Technology |
-|---|---|
-| Frontend (`client/`) | Next.js (App Router), React, JavaScript, Tailwind CSS |
-| Backend (`server/`) | To be decided |
-| Design | Figma wireframes (Option A: traditional nav bar, Option B: burger menu) |
+| Part                 | Technology                                                              |
+| -------------------- | ----------------------------------------------------------------------- |
+| Frontend (`client/`) | Next.js (App Router), React, JavaScript, Tailwind CSS                   |
+| Backend (`server/`)  | To be decided                                                           |
+| Design               | Figma wireframes (Option A: traditional nav bar, Option B: burger menu) |
 
 ## Project Structure
 
@@ -20,27 +20,27 @@ Frontend development comes first. The backend (`server/`) is intentionally empty
 kitchen-renovation-website/
 ├── client/                     # Frontend application (Next.js)
 │   ├── public/
-│   │   └── images/             # Hero, products, materials, projects, logo
+│   │   └── images/             # Hero, products, materials, gallery, logo
 │   └── src/
 │       ├── app/                # Routes (App Router)
 │       │   ├── layout.js      # Header + footer wrapper
 │       │   ├── page.js        # Home
 │       │   ├── products/
 │       │   ├── areas/
-│       │   ├── projects/
+│       │   ├── gallery/
 │       │   ├── about/
 │       │   └── contact/
 │       ├── components/
 │       │   ├── layout/         # Header, MobileMenu, Footer
 │       │   ├── ui/             # Button, Card, SectionHeading
-│       │   ├── home/           # Hero, Intro, FeaturedProjects, WhyChooseUs, QuoteBand
+│       │   ├── home/           # Hero, Intro, FeaturedGallery, WhyChooseUs, QuoteBand
 │       │   ├── products/       # ProductCard, MaterialCard
 │       │   ├── areas/          # CityCard
-│       │   ├── projects/       # FilterBar, ProjectGallery
+│       │   ├── gallery/        # FilterBar, GalleryGrid
 │       │   ├── about/          # Stats, Values, Showroom
 │       │   ├── contact/        # QuoteForm, ContactInfo, Map
 │       │   └── shared/         # Components used on several pages (Testimonials)
-│       ├── data/               # Site content: products, materials, cities, projects, testimonials, nav
+│       ├── data/               # Site content: products, materials, cities, gallery, testimonials, nav
 │       └── lib/                # Utilities
 ├── server/                     # Backend application and API (not started)
 ├── .gitignore
@@ -49,26 +49,26 @@ kitchen-renovation-website/
 
 ### Pages
 
-| Route | Page |
-|---|---|
-| `/` | Home |
-| `/products` | Products and "Materials We Use" |
-| `/areas` | Areas We Serve (one card per city) |
-| `/projects` | Project gallery with filters |
-| `/about` | About |
-| `/contact` | Quote request form, contact info, map |
+| Route       | Page                                  |
+| ----------- | ------------------------------------- |
+| `/`         | Home                                  |
+| `/products` | Products and "Materials We Use"       |
+| `/areas`    | Areas We Serve (one card per city)    |
+| `/gallery`  | Gallery with filters                  |
+| `/about`    | About                                 |
+| `/contact`  | Quote request form, contact info, map |
 
 Navigation links collapse into a hamburger menu below roughly 1024px.
 
 ### Content lives in `client/src/data/`
 
-Product names, cities, projects, testimonials, and nav links are stored as data files rather than hard-coded in components. Product names are still placeholders pending client confirmation, so update them there.
+Product names, cities, gallery, testimonials, and nav links are stored as data files rather than hard-coded in components. Product names are still placeholders pending client confirmation, so update them there.
 
 ## Prerequisites
 
-* [Git](https://git-scm.com/downloads)
-* [Node.js](https://nodejs.org/) (current LTS) and npm
-* [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/) (current LTS) and npm
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Getting Started
 
@@ -91,11 +91,11 @@ The site runs at [http://localhost:3000](http://localhost:3000).
 
 Other useful commands, run from `client/`:
 
-| Command | What it does |
-|---|---|
-| `npm run build` | Create a production build |
+| Command         | What it does               |
+| --------------- | -------------------------- |
+| `npm run build` | Create a production build  |
 | `npm run start` | Serve the production build |
-| `npm run lint` | Run ESLint |
+| `npm run lint`  | Run ESLint                 |
 
 ### 3. Run the server
 
@@ -114,12 +114,12 @@ Once the server exists, also verify that it starts, its endpoints respond, and t
 
 ## Development Guidelines
 
-* Keep frontend code in `client/` and backend code in `server/`.
-* Put site content (product names, cities, projects, and so on) in `client/src/data/`, not inside components.
-* Never commit secrets, passwords, API keys, or private environment files.
-* Document required environment variables in an `.env.example` file without real credentials.
-* Use descriptive commit messages (for example `feat: add products page`).
-* Test changes before pushing.
+- Keep frontend code in `client/` and backend code in `server/`.
+- Put site content (product names, cities, gallery, and so on) in `client/src/data/`, not inside components.
+- Never commit secrets, passwords, API keys, or private environment files.
+- Document required environment variables in an `.env.example` file without real credentials.
+- Use descriptive commit messages (for example `feat: add products page`).
+- Test changes before pushing.
 
 ## Workflow
 
