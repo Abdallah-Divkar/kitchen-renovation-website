@@ -1,6 +1,6 @@
 import CardImage from "./CardImage";
 
-export default function ProjectCard({
+export default function GalleryCard({
   title,
   city,
   type,

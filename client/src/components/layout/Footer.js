@@ -9,10 +9,10 @@ import { cn } from "@/lib/cn";
 // Hard-coded for now: Cache Components may reject reading the current date here
 const copyrightYear = 2026;
 
-// "Projects" sits under the Products column in the design, so it's picked out of navLinks.AD
-const projectsLink = navLinks.find((link) => link.href === "/projects");
+// "Gallery" sits under the Products column in the design, so it's picked out of navLinks.
+const galleryLink = navLinks.find((link) => link.href === "/gallery");
 
-// Light focus ring: the header's dark ring would be invisible on this background.AD
+// Light focus ring: the header's dark ring would be invisible on this background.
 const linkClass =
   "rounded-sm hover:text-surface hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface";
 const headingClass = "text-base font-semibold text-surface";
@@ -60,10 +60,10 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              {projectsLink && (
+              {galleryLink && (
                 <li>
-                  <Link href={projectsLink.href} className={linkClass}>
-                    {projectsLink.label}
+                  <Link href={galleryLink.href} className={linkClass}>
+                    {galleryLink.label}
                   </Link>
                 </li>
               )}
