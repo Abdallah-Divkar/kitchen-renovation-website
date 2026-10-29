@@ -15,7 +15,8 @@
 export const site = {
   name: "A-One Kitchen",
   tagline: "Custom Kitchen Cabinets & Kitchen Renovations in the GTA.",
-  description: "Transform your home with beautifully designed custom cabinetry and expertly executed kitchen renovations.\nFrom concept and manufacturing to installation and finishing, A-One Kitchen helps bring your vision to life.",
+  description:
+    "Transform your home with beautifully designed custom cabinetry and expertly executed kitchen renovations.\nFrom concept and manufacturing to installation and finishing, A-One Kitchen helps bring your vision to life.",
   phone: "TODO: (000) 000-0000",
   phoneHref: "+10000000000",
   whatsapp: "",

@@ -66,6 +66,6 @@ export const values = [
 export const stats = [
   { value: "TODO", label: "Years of experience" },
   { value: "TODO", label: "Projects completed" },
-  { value: "TODO", label: "Year established" },
+  { value: "1975", label: "Year established" }, //TODO client to confirm
   { value: "TODO", label: "Warranty" },
 ];
