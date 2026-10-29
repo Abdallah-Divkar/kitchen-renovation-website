@@ -5,6 +5,7 @@ import { quoteLink } from "@/data/nav";
 import { site } from "@/data/site";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
+import Image from "next/image";
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
@@ -17,7 +18,18 @@ export default function Header() {
           href="/"
           className={`font-heading text-ink shrink-0 text-lg font-bold whitespace-nowrap ${focusRing}`}
         >
-          {site.name}
+          {site.logo ? (
+            <Image
+              src={site.logo.src}
+              alt={site.name}
+              width={site.logo.width}
+              height={site.logo.height}
+              loading="eager"
+              className="block h-10 w-auto"
+            />
+          ) : (
+            site.name
+          )}
         </Link>
 
         <nav aria-label="Main" className="hidden lg:block">

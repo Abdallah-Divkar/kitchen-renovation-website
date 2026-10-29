@@ -13,8 +13,9 @@
 
 /** @type {SiteInfo} */
 export const site = {
-  name: "TODO: Business Name",
-  tagline: "TODO: client tagline",
+  name: "A-One Kitchen",
+  tagline: "Custom Kitchen Cabinets & Kitchen Renovations in the GTA.\nTransform your home with beautifully designed custom cabinetry and expertly executed kitchen renovations.\nFrom concept and manufacturing to installation and finishing, A-One Kitchen helps bring your vision to life.",
+  description: "Transform your home with beautifully designed custom cabinetry and expertly executed kitchen renovations.\nFrom concept and manufacturing to installation and finishing, A-One Kitchen helps bring your vision to life.",
   phone: "TODO: (000) 000-0000",
   phoneHref: "+10000000000",
   whatsapp: "",
@@ -25,6 +26,7 @@ export const site = {
     province: "ON",
     postalCode: "TODO",
   },
+  logo: { src: "/images/logo_1.jpeg", width: 140, height: 44 },
   hours: [
     { days: "Monday - Friday", hours: "TODO" },
     { days: "Saturday", hours: "TODO" },
