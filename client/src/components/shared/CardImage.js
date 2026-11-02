@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 // Real photos haven't arrived yet: the data files point at placeholder.jpg
 // files that don't exist in public/, so those paths get a grey box instead
 // of a broken image and a red 404 in the console.
-function isPlaceholder(src) {
+export function isPlaceholder(src) {
   return !src || src.endsWith("/placeholder.jpg");
 }
 

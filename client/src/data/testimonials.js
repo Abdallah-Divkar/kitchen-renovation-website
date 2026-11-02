@@ -15,6 +15,7 @@ export const testimonials = [
     name: "TODO: client name",
     city: "Toronto",
     quote: "TODO: client to provide.",
+    rating: 5,
   },
   {
     id: "testimonial-2",
@@ -27,5 +28,6 @@ export const testimonials = [
     name: "TODO: client name",
     city: "Vaughan",
     quote: "TODO: client to provide.",
+    rating: 3,
   },
 ];

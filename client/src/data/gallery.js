@@ -6,6 +6,7 @@
  * @property {string} city      Name of a city in data/cities.js
  * @property {string} image     Path under /public, e.g. "/images/gallery/gallery-1.jpg"
  * @property {string} imageAlt
+ * @property {boolean} [featured]  Shown in the Featured Gallery on Home
  */
 
 /** Filter options for the gallery page. */
@@ -26,6 +27,60 @@ export const galleryItems = [
     city: "Toronto",
     image: "/images/gallery/placeholder.jpg",
     imageAlt: "Modern custom kitchen in Toronto",
+    featured: true,
+  },
+  {
+    slug: "spa-vanity-markham",
+    title: "Spa-Style Vanity",
+    category: "vanities",
+    city: "Markham",
+    image: "/images/gallery/placeholder.jpg",
+    imageAlt: "Custom bathroom vanity in Markham",
+    featured: true,
+  },
+  {
+    slug: "walk-in-closet-richmond-hill",
+    title: "Walk-In Closet",
+    category: "closets",
+    city: "Richmond Hill",
+    image: "/images/gallery/placeholder.jpg",
+    imageAlt: "Custom walk-in closet in Richmond Hill",
+    featured: true,
+  },
+  {
+    slug: "quartz-countertops-vaughan",
+    title: "Quartz Countertops",
+    category: "countertops",
+    city: "Vaughan",
+    image: "/images/gallery/placeholder.jpg",
+    imageAlt: "Custom quartz kitchen countertops in Vaughan",
+    featured: true,
+  },
+  {
+    slug: "shaker-kitchen-scarborough",
+    title: "Shaker Kitchen",
+    category: "kitchens",
+    city: "Scarborough",
+    image: "/images/gallery/placeholder.jpg",
+    imageAlt: "Shaker style kitchen in Scarborough",
+    featured: true,
+  },
+  {
+    slug: "floating-vanity-toronto",
+    title: "Floating Vanity",
+    category: "vanities",
+    city: "Toronto",
+    image: "/images/gallery/placeholder.jpg",
+    imageAlt: "Floating bathroom vanity in Toronto",
+    featured: true,
+  },
+  {
+    slug: "traditional-kitchen-scarborough",
+    title: "Traditional Kitchen",
+    category: "kitchens",
+    city: "Scarborough",
+    image: "/images/gallery/placeholder.jpg",
+    imageAlt: "Traditional custom kitchen in Scarborough",
   },
 ];
 
