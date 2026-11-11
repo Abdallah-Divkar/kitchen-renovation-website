@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site"; //The buisness name will added there, from it the name will be used elsewhere. MQ
 import Header from "@/components/layout/Header";
@@ -7,6 +7,12 @@ import Footer from "@/components/layout/Footer";
 const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
+});
+
+const display = Cormorant_Garamond({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata = {
@@ -21,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${body.variable} h-full scroll-pt-16 antialiased`}
+      className={`${body.variable} ${display.variable} h-full scroll-pt-16 antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <a

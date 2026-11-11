@@ -12,10 +12,9 @@ const copyrightYear = 2026;
 // "Gallery" sits under the Products column in the design, so it's picked out of navLinks.
 const galleryLink = navLinks.find((link) => link.href === "/gallery");
 
-// Light focus ring: the header's dark ring would be invisible on this background.
 const linkClass =
-  "rounded-sm hover:text-surface hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-surface";
-const headingClass = "text-base font-semibold text-surface";
+  "rounded-sm hover:text-ink hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
+const headingClass = "text-base font-semibold text-ink";
 const listClass = "mt-3 flex flex-col gap-3 text-[15px]";
 
 export default function Footer() {
@@ -29,14 +28,14 @@ export default function Footer() {
           <div className="flex flex-col gap-3.5">
             <Link
               href="/"
-              className={cn(linkClass, "text-surface w-fit text-xl font-bold")}
+              className={cn(linkClass, "text-ink w-fit text-xl font-bold")}
             >
               {site.name}
             </Link>
             <p className="text-[15px]">{site.tagline}</p>
             <ul
               aria-label="Social media"
-              className="text-surface flex flex-wrap gap-x-4 gap-y-2 text-[15px] font-medium"
+              className="text-ink flex flex-wrap gap-x-4 gap-y-2 text-[15px] font-medium"
             >
               {site.social.map(({ label, href }) => (
                 <li key={label}>
