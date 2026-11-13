@@ -16,7 +16,7 @@ export default function Footer() {
   const { address } = site;
 
   return (
-    <footer className="bg-footer text-footer-text pt-18 pb-8">
+    <footer className="bg-footer text-footer-text border-footer-line border-t pt-18 pb-8">
       <Container>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           {/* Brand: the business name stands in for the logo until it arrives.AD */}

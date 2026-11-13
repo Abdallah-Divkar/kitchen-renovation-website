@@ -12,6 +12,7 @@
   --color-raised: #222222; /* cards, form fields, bottom bar */
   --color-line: #2e2e2e; /* borders and dividers */
   --color-placeholder: #2e2e2e; /* image placeholder boxes, lighter than cards */
+  --color-danger: #f0a39a; /* form error text and borders (7.9:1 on cards) */
 
   /* Footer */
   --color-footer: #181818; /* footer background */
