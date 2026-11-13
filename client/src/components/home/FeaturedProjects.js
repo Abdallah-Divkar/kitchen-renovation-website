@@ -1,17 +1,29 @@
+import Carousel from "@/components/shared/Carousel";
 import GalleryCard from "@/components/shared/GalleryCard";
 import Section from "@/components/ui/Section";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { galleryItems, getCategoryLabel } from "@/data/gallery";
 import { homeCopy } from "@/data/home";
 
 export default function FeaturedProjects() {
-  const { title, subtitle } = homeCopy.featuredProjects;
-  const featured = galleryItems.filter((item) => item.featured).slice(0, 6);
+  const { eyebrow, title, subtitle } = homeCopy.featuredProjects;
+  const featured = galleryItems.filter((item) => item.featured).slice(0, 10);
 
   if (featured.length === 0) return null;
 
   return (
-    <Section alt title={title} subtitle={subtitle}>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <Section>
+      <Carousel
+        label={title}
+        heading={
+          <SectionHeading
+            eyebrow={eyebrow}
+            title={title}
+            subtitle={subtitle}
+            className="mb-0!"
+          />
+        }
+      >
         {featured.map((item) => (
           <GalleryCard
             key={item.slug}
@@ -20,10 +32,10 @@ export default function FeaturedProjects() {
             type={getCategoryLabel(item.category)}
             image={item.image}
             imageAlt={item.imageAlt}
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
           />
         ))}
-      </div>
+      </Carousel>
     </Section>
   );
 }

@@ -4,6 +4,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function Section({
   alt = false,
+  eyebrow,
   title,
   subtitle,
   align,
@@ -14,7 +15,7 @@ export default function Section({
   return (
     <section
       className={cn(
-        "py-16 md:py-20",
+        "py-16 md:py-20 lg:py-28",
         alt ? "bg-surface-alt" : "bg-surface",
         className,
       )}
@@ -22,7 +23,12 @@ export default function Section({
     >
       <Container>
         {title && (
-          <SectionHeading title={title} subtitle={subtitle} align={align} />
+          <SectionHeading
+            eyebrow={eyebrow}
+            title={title}
+            subtitle={subtitle}
+            align={align}
+          />
         )}
         {children}
       </Container>

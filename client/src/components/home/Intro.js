@@ -21,12 +21,14 @@ export default function Intro() {
     <Section aria-labelledby="intro-title">
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col items-start gap-4">
-          <p className="text-muted text-[13px] font-semibold tracking-wide uppercase">
+          {/* Change 1: the eyebrow is brass */}
+          <p className="text-primary text-xs font-semibold tracking-[0.17em] uppercase">
             {eyebrow}
           </p>
+          {/* Change 2: same size and weight as the other section headings */}
           <h2
             id="intro-title"
-            className="text-ink text-3xl leading-snug font-bold md:text-4xl"
+            className="text-ink text-3xl leading-[1.15] font-semibold md:text-[2.75rem]"
           >
             {year ? `${heading} since ${year}` : heading}
           </h2>
@@ -34,7 +36,8 @@ export default function Intro() {
           {aboutLink && (
             <Link
               href={aboutLink.href}
-              className={`text-ink rounded-sm font-semibold hover:underline ${focusRing}`}
+              // Change 3: the link is brass
+              className={`text-primary rounded-sm text-[15px] font-medium underline-offset-4 hover:underline ${focusRing}`}
             >
               {linkLabel} <span aria-hidden="true">→</span>
             </Link>
