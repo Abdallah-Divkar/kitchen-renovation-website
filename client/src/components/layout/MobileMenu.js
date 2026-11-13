@@ -4,16 +4,23 @@ import { useEffect, useId, useRef, useState } from "react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { quoteLink } from "@/data/nav";
+import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/ui/Icons";
 import { site } from "@/data/site";
+import { cn } from "@/lib/cn";
+import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import { usePathname } from "next/navigation";
 
 // Matches Tailwind's lg breakpoint (64rem = 1024px), where the desktop nav appears.MQ
 const DESKTOP_QUERY = "(min-width: 64rem)";
-const iconButton =
-  "inline-flex size-10 items-center justify-center rounded-button text-ink hover:bg-surface-alt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+const focusRing =
+  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+const iconButton = cn(
+  "inline-flex size-10 items-center justify-center rounded-button text-ink hover:text-primary transition-colors",
+  focusRing,
+);
 
-export default function MobileMenu() {
+export default function MobileMenu({ className }) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const dialogRef = useRef(null);
@@ -63,8 +70,10 @@ export default function MobileMenu() {
     return () => query.removeEventListener("change", onChange);
   }, []);
 
+  const { address } = site;
+
   return (
-    <div className="lg:hidden">
+    <div className={cn("lg:hidden", className)}>
       <button
         type="button"
         className={iconButton}
@@ -74,17 +83,7 @@ export default function MobileMenu() {
         aria-controls={menuId}
         onClick={() => setOpen(true)}
       >
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          className="size-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        >
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+        <MenuIcon className="size-7" />
       </button>
       <dialog
         ref={dialogRef}
@@ -98,55 +97,68 @@ export default function MobileMenu() {
         onClose={close}
         className="bg-surface text-ink m-0 h-dvh max-h-none w-full max-w-none flex-col border-0 p-0 open:flex"
       >
-        <Container className="border-line flex h-16 shrink-0 items-center justify-between border-b">
-          <span className="font-heading text-lg font-bold">{site.name}</span>
+        {/* Same layout as the mobile header: logo centred, close button on the right */}
+        <Container className="border-line grid h-18 shrink-0 grid-cols-[1fr_auto_1fr] items-center border-b">
+          <Logo
+            onClick={close}
+            className={cn("col-start-2", focusRing)}
+            imageClassName="h-10"
+          />
           <button
             type="button"
-            className={iconButton}
+            className={cn(iconButton, "col-start-3 justify-self-end")}
             aria-label="Close menu"
             onClick={close}
           >
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              className="size-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            >
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
+            <CloseIcon className="size-7" />
           </button>
         </Container>
 
-        <Container
-          as="nav"
-          aria-label="Main"
-          className="flex-1 overflow-y-auto py-4"
-        >
-          <NavLinks
-            className="divide-line flex flex-col divide-y"
-            linkClassName="block py-4 text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            inactiveClassName="text-muted hover:text-ink"
-            activeClassName="text-ink font-semibold underline decoration-2 underline-offset-8"
-            onLinkClick={close}
-          />
-        </Container>
+        <div className="flex-1 overflow-y-auto">
+          <Container className="py-10">
+            <nav aria-label="Main">
+              <NavLinks
+                className="flex flex-col gap-5"
+                linkClassName={cn(
+                  "font-heading block w-fit text-4xl font-semibold transition-colors",
+                  focusRing,
+                )}
+                inactiveClassName="text-ink hover:text-primary"
+                activeClassName="text-primary"
+                onLinkClick={close}
+              />
+            </nav>
 
-        <Container className="border-line flex shrink-0 flex-col gap-3 border-t py-6">
-          <a
-            href={`tel:${site.phoneHref}`}
-            onClick={close}
-            className="text-ink focus-visible:outline-primary self-center py-2 font-medium focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            <span className="sr-only">Call </span>
-            {site.phone}
-          </a>
-          <Button href={quoteLink.href} onClick={close} className="w-full">
-            {quoteLink.label}
-          </Button>
-        </Container>
+            <div className="border-line mt-8 flex flex-col gap-7 border-t pt-7">
+              <a
+                href={`tel:${site.phoneHref}`}
+                onClick={close}
+                className={cn(
+                  "hover:text-primary inline-flex w-fit items-center gap-2.5 text-lg transition-colors",
+                  focusRing,
+                )}
+              >
+                <PhoneIcon className="size-5" />
+                <span className="sr-only">Call </span>
+                {site.phone}
+              </a>
+              <Button
+                href={quoteLink.href}
+                onClick={close}
+                className="w-full py-3.5! text-[15px]!"
+              >
+                {quoteLink.label}
+              </Button>
+              <p className="text-muted text-sm leading-relaxed">
+                Showroom: {address.street}, {address.unit}, {address.city}
+                <br />
+                {site.hours
+                  .map(({ days, hours }) => `${days}: ${hours}`)
+                  .join(" · ")}
+              </p>
+            </div>
+          </Container>
+        </div>
       </dialog>
     </div>
   );

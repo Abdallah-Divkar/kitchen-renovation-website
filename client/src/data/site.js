@@ -41,7 +41,7 @@ export const site = {
   address,
   directionsUrl,
   visitNote: "Walk-ins welcome, no appointment needed",
-  logo: { src: "/images/logo_1.jpeg", width: 140, height: 44 },
+  logo: { src: "/images/brand/aone-logo-white.svg", width: 1168, height: 386 },
   hours: [
     { days: "Monday - Saturday", hours: "8 am - 7 pm" },
     { days: "Sunday", hours: "Closed" },
