@@ -9,7 +9,7 @@ export default function Card({
   return (
     <Tag
       className={cn(
-        "rounded-card border-line bg-surface shadow-card border p-4",
+        "rounded-card border-line bg-raised shadow-card border p-4",
         className,
       )}
       {...props}

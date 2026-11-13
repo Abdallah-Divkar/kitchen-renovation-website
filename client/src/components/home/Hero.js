@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="bg-primary text-surface relative py-16 md:py-24 lg:py-40"
+      className="bg-surface text-ink relative py-16 md:py-24 lg:py-40"
     >
       {!isPlaceholder(homeCopy.hero.image) && (
         <Image
@@ -24,7 +24,7 @@ export default function Hero() {
           className="object-cover"
         />
       )}
-      <div className="bg-primary/60 absolute inset-0" aria-hidden="true" />
+      <div className="bg-surface/60 absolute inset-0" aria-hidden="true" />
       <Container className="relative">
         <h1
           id="hero-title"
@@ -32,22 +32,18 @@ export default function Hero() {
         >
           {site.tagline}
         </h1>
-        <p className="text-surface/80 mt-6 max-w-2xl text-lg sm:text-xl">
+        <p className="text-ink/80 mt-6 max-w-2xl text-lg sm:text-xl">
           {site.description}
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Button
-            href={quoteLink.href}
-            variant="secondary"
-            className={`${heroButton} hover:bg-line! focus-visible:outline-surface!`}
-          >
+          <Button href={quoteLink.href} className={heroButton}>
             {quoteLink.label}
           </Button>
           {galleryLink && (
             <Button
               href={galleryLink.href}
               variant="outline"
-              className={`${heroButton} border-surface! text-surface! hover:bg-surface! hover:text-ink! focus-visible:outline-surface!`}
+              className={heroButton}
             >
               {homeCopy.hero.secondaryLabel}
             </Button>
