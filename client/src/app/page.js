@@ -3,10 +3,10 @@ import FeaturedProjects from "@/components/home/FeaturedProjects";
 import Hero from "@/components/home/Hero";
 import Intro from "@/components/home/Intro";
 import OurProducts from "@/components/home/OurProducts";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
 import QuoteBand from "@/components/shared/QuoteBand";
 import Testimonials from "@/components/shared/Testimonials";
 import { testimonials } from "@/data/testimonials";
+import { homeCopy } from "@/data/home";
 
 export default function Home() {
   return (
@@ -15,8 +15,11 @@ export default function Home() {
       <Intro />
       <OurProducts />
       <FeaturedProjects />
-      <WhyChooseUs />
-      <Testimonials testimonials={testimonials} />
+      <Testimonials
+        testimonials={testimonials}
+        eyebrow={homeCopy.testimonials.eyebrow}
+        title={homeCopy.testimonials.title}
+      />
       <Areas />
       <QuoteBand />
     </div>

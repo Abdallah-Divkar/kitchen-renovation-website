@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 import CardImage from "./CardImage";
 
 const linkClass =
-  "text-ink mt-3 inline-block text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  "text-primary mt-3 inline-block text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 export default function ProductCard({
   name,
@@ -14,6 +14,7 @@ export default function ProductCard({
   href,
   linkLabel = "View details",
   framed = false,
+  compactOnMobile = false,
   headingAs: Heading = "h3",
   sizes,
   className,
@@ -25,14 +26,41 @@ export default function ProductCard({
         src={image}
         alt={imageAlt}
         sizes={sizes}
-        className={framed ? "aspect-video" : "aspect-[4/3] sm:aspect-square"}
+        className={
+          framed
+            ? "aspect-video"
+            : cn(
+                "sm:aspect-square",
+                compactOnMobile ? "aspect-square" : "aspect-[4/3]",
+              )
+        }
       />
-      <Heading className="text-ink mt-4 text-lg font-semibold md:text-xl">
+      <Heading
+        className={cn(
+          "text-ink font-semibold md:text-xl",
+          compactOnMobile
+            ? "mt-2.5 text-base sm:mt-4 sm:text-lg"
+            : "mt-4 text-lg",
+        )}
+      >
         {name}
       </Heading>
-      {summary && <p className="text-muted mt-2 text-sm">{summary}</p>}
+      {/* Compact on phones: photo and name only; summary and link from sm up */}
+      {summary && (
+        <p
+          className={cn(
+            "text-muted mt-2 text-sm",
+            compactOnMobile && "hidden sm:block",
+          )}
+        >
+          {summary}
+        </p>
+      )}
       {href && (
-        <Link href={href} className={linkClass}>
+        <Link
+          href={href}
+          className={cn(linkClass, compactOnMobile && "max-sm:hidden")}
+        >
           {linkLabel}
           <span className="sr-only"> about {name}</span>
           <span aria-hidden="true"> →</span>
