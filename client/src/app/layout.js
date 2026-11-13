@@ -3,6 +3,7 @@ import "./globals.css";
 import { site } from "@/data/site"; //The buisness name will added there, from it the name will be used elsewhere. MQ
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ShowroomActions from "@/components/layout/ShowroomActions";
 
 const body = Inter({
   variable: "--font-body",
@@ -13,6 +14,14 @@ const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
 });
+
+// "cover" lets the page reach the edges of phones with a home bar, so the
+// bottom bar can pad itself with env(safe-area-inset-bottom).
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata = {
   title: {
@@ -47,6 +56,8 @@ export default function RootLayout({ children }) {
         </main>
 
         <Footer />
+
+        <ShowroomActions />
       </body>
     </html>
   );
