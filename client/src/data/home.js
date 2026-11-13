@@ -7,7 +7,6 @@ export const homeCopy = {
   hero: {
     image: "/images/home/testImage.jpg",
     imageAlt: "Finished custom kitchen",
-    secondaryLabel: "View Our Gallery",
   },
   intro: {
     eyebrow: "About us",
@@ -27,7 +26,6 @@ export const homeCopy = {
   featuredProjects: {
     title: "Featured Projects",
     subtitle: "A few of our recent projects across the GTA.",
-    buttonLabel: "View the Gallery",
   },
   whyChooseUs: {
     title: "Why Choose Us",

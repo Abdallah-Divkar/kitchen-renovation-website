@@ -1,16 +1,11 @@
 import GalleryCard from "@/components/shared/GalleryCard";
-import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import { galleryItems, getCategoryLabel } from "@/data/gallery";
 import { homeCopy } from "@/data/home";
-import { navLinks } from "@/data/nav";
-
-const buttonSize = "px-7! py-3.5! text-[15px]! font-semibold!";
 
 export default function FeaturedProjects() {
-  const { title, subtitle, buttonLabel } = homeCopy.featuredProjects;
+  const { title, subtitle } = homeCopy.featuredProjects;
   const featured = galleryItems.filter((item) => item.featured).slice(0, 6);
-  const galleryLink = navLinks.find((link) => link.href === "/gallery");
 
   if (featured.length === 0) return null;
 
@@ -29,17 +24,6 @@ export default function FeaturedProjects() {
           />
         ))}
       </div>
-      {galleryLink && (
-        <div className="mt-10">
-          <Button
-            href={galleryLink.href}
-            variant="outline"
-            className={buttonSize}
-          >
-            {buttonLabel}
-          </Button>
-        </div>
-      )}
     </Section>
   );
 }

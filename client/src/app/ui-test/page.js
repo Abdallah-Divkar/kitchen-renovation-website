@@ -81,7 +81,7 @@ export default function UiTestPage() {
           {cities.map((city) => (
             <CityCard key={city.slug} {...city} />
           ))}
-          <CityCard {...cities[0]} name="Link test" tags={[]} href="/areas" />
+          <CityCard {...cities[0]} name="Link test" tags={[]} href="#" />
         </div>
       </Section>
 
