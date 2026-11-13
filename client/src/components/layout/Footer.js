@@ -1,16 +1,11 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import { cities } from "@/data/cities";
-import { navLinks } from "@/data/nav";
 import { products } from "@/data/products";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
 
 // Hard-coded for now: Cache Components may reject reading the current date here
 const copyrightYear = 2026;
-
-// "Gallery" sits under the Products column in the design, so it's picked out of navLinks.
-const galleryLink = navLinks.find((link) => link.href === "/gallery");
 
 const linkClass =
   "rounded-sm hover:text-ink hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
@@ -23,7 +18,7 @@ export default function Footer() {
   return (
     <footer className="bg-footer text-footer-text pt-18 pb-8">
       <Container>
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           {/* Brand: the business name stands in for the logo until it arrives.AD */}
           <div className="flex flex-col gap-3.5">
             <Link
@@ -59,28 +54,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              {galleryLink && (
-                <li>
-                  <Link href={galleryLink.href} className={linkClass}>
-                    {galleryLink.label}
-                  </Link>
-                </li>
-              )}
-            </ul>
-          </nav>
-
-          <nav aria-labelledby="footer-areas">
-            <h2 id="footer-areas" className={headingClass}>
-              Areas We Serve
-            </h2>
-            <ul className={listClass}>
-              {cities.map(({ slug, name }) => (
-                <li key={slug}>
-                  <Link href="/areas" className={linkClass}>
-                    {name}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </nav>
 
@@ -100,8 +73,8 @@ export default function Footer() {
               </li>
               <li>
                 <address className="not-italic">
-                  Showroom: {address.street}, {address.city}, {address.province}{" "}
-                  {address.postalCode}
+                  Showroom: {address.street}, {address.unit}, {address.city},{" "}
+                  {address.province} {address.postalCode}
                 </address>
               </li>
               {site.hours.map(({ days, hours }) => (

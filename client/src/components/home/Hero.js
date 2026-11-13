@@ -1,14 +1,13 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { homeCopy } from "@/data/home";
-import { navLinks, quoteLink } from "@/data/nav";
+import { quoteLink } from "@/data/nav";
 import { site } from "@/data/site";
 import Image from "next/image";
 import { isPlaceholder } from "@/components/shared/CardImage";
 
 const heroButton = "px-7! py-3.5! text-[15px]! font-semibold!";
 export default function Hero() {
-  const galleryLink = navLinks.find((link) => link.href === "/gallery");
   return (
     <section
       aria-labelledby="hero-title"
@@ -39,15 +38,6 @@ export default function Hero() {
           <Button href={quoteLink.href} className={heroButton}>
             {quoteLink.label}
           </Button>
-          {galleryLink && (
-            <Button
-              href={galleryLink.href}
-              variant="outline"
-              className={heroButton}
-            >
-              {homeCopy.hero.secondaryLabel}
-            </Button>
-          )}
         </div>
       </Container>
     </section>
