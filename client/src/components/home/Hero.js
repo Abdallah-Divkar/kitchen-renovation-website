@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="bg-surface text-ink relative py-16 md:py-24 lg:py-40"
+      className="bg-surface text-ink relative pt-32 pb-16 md:pt-40 md:pb-24 lg:py-40"
     >
       {!isPlaceholder(homeCopy.hero.image) && (
         <Image
