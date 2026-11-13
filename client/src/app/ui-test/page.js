@@ -14,6 +14,13 @@ import Testimonials from "@/components/shared/Testimonials";
 import { testimonials } from "@/data/testimonials";
 import QuoteBand from "@/components/shared/QuoteBand";
 import PageHero from "@/components/shared/PageHero";
+import Carousel from "@/components/shared/Carousel";
+
+// 10 slides for the carousel test: the 6 gallery items, then 4 repeats.
+const tenSlides = Array.from({ length: 10 }, (_, i) => ({
+  ...galleryItems[i % galleryItems.length],
+  slug: `carousel-test-${i + 1}`,
+}));
 
 // Edge-case data for testing only. Real content lives in src/data/.
 const longProduct = {
@@ -35,6 +42,53 @@ export default function UiTestPage() {
         breadcrumbs={[{ label: "Products" }]}
         showQuoteButton
       />
+
+      <Section alt>
+        <Carousel
+          label="Carousel test: 10 slides"
+          heading={
+            <SectionHeading
+              title="Carousel: 10 slides"
+              subtitle="Swipe, scroll or use the arrows. Dots and arrows update as it moves."
+              className="mb-0!"
+            />
+          }
+        >
+          {tenSlides.map((item) => (
+            <GalleryCard
+              key={item.slug}
+              title={item.title}
+              city={item.city}
+              type={getCategoryLabel(item.category)}
+              image={item.image}
+              imageAlt={item.imageAlt}
+            />
+          ))}
+        </Carousel>
+      </Section>
+
+      <Section>
+        <Carousel
+          label="Carousel test: 2 slides"
+          heading={
+            <SectionHeading
+              title="Carousel: 2 slides"
+              subtitle="On desktop both fit, so the arrows and dots should disappear."
+              className="mb-0!"
+            />
+          }
+        >
+          {tenSlides.slice(0, 2).map((item) => (
+            <GalleryCard
+              key={item.slug}
+              title={item.title}
+              city={item.city}
+              image={item.image}
+              imageAlt={item.imageAlt}
+            />
+          ))}
+        </Carousel>
+      </Section>
 
       <Section
         title="ProductCard: plain (Home)"
@@ -94,8 +148,11 @@ export default function UiTestPage() {
           {galleryItems.map((project) => (
             <GalleryCard
               key={project.slug}
-              {...project}
+              title={project.title}
+              city={project.city}
               type={getCategoryLabel(project.category)}
+              image={project.image}
+              imageAlt={project.imageAlt}
             />
           ))}
         </div>

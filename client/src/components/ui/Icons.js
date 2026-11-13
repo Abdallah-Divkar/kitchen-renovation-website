@@ -49,3 +49,19 @@ export function PinIcon({ className }) {
     </Icon>
   );
 }
+
+export function ArrowLeftIcon({ className }) {
+  return (
+    <Icon className={className}>
+      <path d="M15 18l-6-6 6-6" />
+    </Icon>
+  );
+}
+
+export function ArrowRightIcon({ className }) {
+  return (
+    <Icon className={className}>
+      <path d="M9 18l6-6-6-6" />
+    </Icon>
+  );
+}
