@@ -9,6 +9,7 @@
  * @property {string} email        Receives quote requests
  * @property {{street: string, unit: string, city: string, province: string, postalCode: string}} address
  * @property {string} directionsUrl  Google Maps directions to the showroom
+ * @property {string} mapUrl         The showroom on Google Maps
  * @property {string} visitNote      Shown with the showroom details
  * @property {{days: string, hours: string}[]} hours
  * @property {{label: string, href: string}[]} social  Only keep the ones the client has
@@ -24,9 +25,12 @@ const address = {
 
 // Google Maps directions link. The unit is left out because Maps
 // finds the building more reliably without it.
-const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+const mapQuery = encodeURIComponent(
   `${address.street}, ${address.city}, ${address.province}`,
-)}`;
+);
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
+// Opens the showroom's location on Google Maps (used by the map box on Contact)
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 
 /** @type {SiteInfo} */
 export const site = {
@@ -40,6 +44,7 @@ export const site = {
   email: "todo@example.com", // TODO: client to send the quote email
   address,
   directionsUrl,
+  mapUrl,
   visitNote: "Walk-ins welcome, no appointment needed",
   logo: { src: "/images/brand/aone-logo-white.svg", width: 1168, height: 386 },
   hours: [

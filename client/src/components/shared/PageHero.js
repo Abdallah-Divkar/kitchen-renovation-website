@@ -16,7 +16,7 @@ export default function PageHero({
   const trail = [{ label: "Home", href: "/" }, ...breadcrumbs];
 
   return (
-    <section className="bg-placeholder py-16 md:py-24">
+    <section className="bg-surface-alt border-line border-b py-14 md:py-20">
       <Container>
         <nav aria-label="Breadcrumb">
           <ol className="text-muted flex flex-wrap gap-x-2 text-sm">
@@ -40,11 +40,13 @@ export default function PageHero({
           </ol>
         </nav>
 
-        <h1 className="text-ink mt-4 max-w-4xl text-4xl font-bold md:text-5xl">
+        <h1 className="text-ink mt-5 max-w-4xl text-[2.5rem] leading-[1.1] font-semibold md:text-6xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="text-ink mt-4 max-w-2xl text-lg">{subtitle}</p>
+          <p className="text-muted mt-4 max-w-2xl text-lg leading-relaxed">
+            {subtitle}
+          </p>
         )}
         {showQuoteButton && (
           <Button href={quoteLink.href} className="mt-6">

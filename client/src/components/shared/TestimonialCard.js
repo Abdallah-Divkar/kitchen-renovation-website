@@ -14,7 +14,7 @@ export default function TestimonialCard({
   return (
     <Card as="figure" className={cn("md:p-8", className)} {...props}>
       {rating > 0 && (
-        <p className="text-ink mb-3 text-lg tracking-widest">
+        <p className="text-primary mb-3 text-lg tracking-widest">
           <span aria-hidden="true">{"★".repeat(rating)}</span>
           <span className="sr-only">Rated {rating} out of 5</span>
         </p>

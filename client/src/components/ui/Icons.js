@@ -65,3 +65,21 @@ export function ArrowRightIcon({ className }) {
     </Icon>
   );
 }
+
+export function MailIcon({ className }) {
+  return (
+    <Icon className={className}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </Icon>
+  );
+}
+
+export function ClockIcon({ className }) {
+  return (
+    <Icon className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </Icon>
+  );
+}
