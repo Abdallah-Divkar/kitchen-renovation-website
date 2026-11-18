@@ -8,8 +8,8 @@
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 /** Call-to-action shown in the header and mobile menu */
