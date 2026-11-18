@@ -1,61 +1,92 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import { products } from "@/data/products";
+import { contactCopy } from "@/data/contact";
+import { navLinks } from "@/data/nav";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
+import Logo from "./Logo";
 
 // Hard-coded for now: Cache Components may reject reading the current date here
 const copyrightYear = 2026;
 
-const linkClass =
-  "rounded-sm hover:text-ink hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
-const headingClass = "text-base font-semibold text-ink";
-const listClass = "mt-3 flex flex-col gap-3 text-[15px]";
+const focusRing =
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
+const linkClass = cn("rounded-sm hover:underline", focusRing);
+const headingClass =
+  "text-primary font-sans! text-xs font-semibold tracking-[0.17em] uppercase";
+const listClass = "text-ink mt-3 flex flex-col gap-3";
 
 export default function Footer() {
   const { address } = site;
+  const cityLine = `${address.city}, ${address.province}${address.postalCode ? ` ${address.postalCode}` : ""}`;
+  const hasEmail = site.email && !site.email.includes("example.com");
+  // Links the client hasn't sent yet are still "#": hide them instead of showing dead links
+  const social = site.social.filter(({ href }) => href && href !== "#");
 
   return (
-    <footer className="bg-footer text-footer-text border-footer-line border-t pt-18 pb-8">
-      <Container>
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-          {/* Brand: the business name stands in for the logo until it arrives.AD */}
-          <div className="flex flex-col gap-3.5">
-            <Link
-              href="/"
-              className={cn(linkClass, "text-ink w-fit text-xl font-bold")}
-            >
-              {site.name}
-            </Link>
-            <p className="text-[15px]">{site.tagline}</p>
-            <ul
-              aria-label="Social media"
-              className="text-ink flex flex-wrap gap-x-4 gap-y-2 text-[15px] font-medium"
-            >
-              {site.social.map(({ label, href }) => (
-                <li key={label}>
-                  <a href={href} className={linkClass}>
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+    <footer className="bg-footer text-footer-text">
+      <Container className="pt-20 pb-10">
+        <div className="grid gap-10 sm:grid-cols-2 lg:flex lg:gap-16">
+          <div className="flex flex-col items-start gap-4 lg:w-85">
+            <Logo className={focusRing} imageClassName="h-14" />
+            <p className="leading-relaxed">{site.shortDescription}</p>
+            {social.length > 0 && (
+              <ul
+                aria-label="Social media"
+                className="text-ink flex flex-wrap gap-x-2 text-[15px] font-medium"
+              >
+                {social.map(({ label, href }, index) => (
+                  <li key={label} className="flex gap-2">
+                    {index > 0 && <span aria-hidden="true">·</span>}
+                    <a href={href} className={linkClass}>
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
-          <nav aria-labelledby="footer-products">
-            <h2 id="footer-products" className={headingClass}>
-              Products
+          <nav aria-labelledby="footer-pages">
+            <h2 id="footer-pages" className={headingClass}>
+              Pages
             </h2>
             <ul className={listClass}>
-              {products.map(({ slug, name }) => (
-                <li key={slug}>
-                  <Link href="/products" className={linkClass}>
-                    {name}
+              {navLinks.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className={linkClass}>
+                    {label}
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
+
+          <div>
+            <h2 className={headingClass}>Visit the showroom</h2>
+            <ul className={listClass}>
+              <li>
+                {address.street}, {address.unit}
+              </li>
+              <li>{cityLine}</li>
+              {site.hours.map(({ days, hours }) => (
+                <li key={days}>
+                  {days}: {hours}
+                </li>
+              ))}
+              <li>
+                <a
+                  href={site.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn("text-primary", linkClass)}
+                >
+                  Get Directions <span aria-hidden="true">→</span>
+                  <span className="sr-only"> (opens Google Maps)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
 
           <div>
             <h2 className={headingClass}>Contact</h2>
@@ -67,31 +98,24 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${site.email}`} className={linkClass}>
-                  {site.email}
-                </a>
+                {hasEmail ? (
+                  <a href={`mailto:${site.email}`} className={linkClass}>
+                    {site.email}
+                  </a>
+                ) : (
+                  contactCopy.info.emailPending
+                )}
               </li>
-              <li>
-                <address className="not-italic">
-                  Showroom: {address.street}, {address.unit}, {address.city},{" "}
-                  {address.province} {address.postalCode}
-                </address>
-              </li>
-              {site.hours.map(({ days, hours }) => (
-                <li key={days}>
-                  {days}: {hours}
-                </li>
-              ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-footer-line text-footer-muted mt-12 flex flex-col gap-2 border-t pt-6 text-sm sm:flex-row sm:justify-between">
+        <div className="border-footer-line text-footer-muted mt-14 border-t pt-14 text-sm">
+          {/* "Privacy Policy" is placeholder text until a privacy page exists */}
           <p>
-            © {copyrightYear} {site.name}. All rights reserved.
+            © {copyrightYear} {site.name}. All rights reserved.{" "}
+            <span aria-hidden="true">·</span> Privacy Policy
           </p>
-          {/* Placeholder text until a privacy policy page exists.AD */}
-          <p>Privacy Policy</p>
         </div>
       </Container>
     </footer>
