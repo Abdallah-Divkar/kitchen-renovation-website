@@ -42,3 +42,17 @@ export const products = [
     imageAlt: "Kitchen countertop",
   },
 ];
+
+/** Copy used only by the Products page. */
+export const productsCopy = {
+  hero: {
+    title: "Our Products",
+    subtitle:
+      "Custom-made in our own shop and installed across Toronto and the GTA.",
+  },
+  grid: {
+    eyebrow: "What we make",
+    title: "Every piece is custom-built",
+    subtitle: "Made to fit your space and style.",
+  },
+};

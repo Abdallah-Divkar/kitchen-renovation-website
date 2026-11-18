@@ -2,51 +2,64 @@
  * @typedef {Object} Material
  * @property {string} slug      Unique id, lowercase with hyphens
  * @property {string} name
- * @property {string} summary   1-2 sentences
+ * @property {string} summary   1 sentence
  * @property {string} image     Path under /public, e.g. "/images/materials/quartz.jpg"
  * @property {string} imageAlt
  */
 
-/** @type {Material[]} */
+/** Copy for the Materials section on the Products page. */
+export const materialsCopy = {
+  eyebrow: "Materials",
+  title: "Materials We Use",
+  subtitle: "The woods, finishes and hardware behind every piece.",
+};
+
+/**
+ * Wording is from Figma; the client confirms the real list.
+ * @type {Material[]}
+ */
 export const materials = [
-  {
-    slug: "quartz",
-    name: "Quartz",
-    summary:
-      "Non-porous, low-maintenance engineered stone available in a wide range of colours and patterns.",
-    image: "/images/materials/placeholder.jpg",
-    imageAlt: "Quartz countertop sample",
-  },
-  {
-    slug: "granite",
-    name: "Granite",
-    summary:
-      "Natural stone with unique veining, highly resistant to heat and scratches.",
-    image: "/images/materials/placeholder.jpg",
-    imageAlt: "Granite countertop sample",
-  },
   {
     slug: "solid-wood",
     name: "Solid Wood",
     summary:
-      "Classic, durable hardwood for cabinet doors and frames with a warm, natural look.",
+      "Oak, maple and walnut for doors, frames and natural wood finishes.",
     image: "/images/materials/placeholder.jpg",
-    imageAlt: "Solid wood cabinet sample",
+    imageAlt: "Solid wood sample",
   },
   {
-    slug: "plywood",
-    name: "Plywood",
-    summary:
-      "Strong, moisture-resistant cabinet boxes built to last for years.",
+    slug: "painted-mdf",
+    name: "Painted MDF",
+    summary: "A smooth, stable base for painted shaker and flat-panel doors.",
     image: "/images/materials/placeholder.jpg",
-    imageAlt: "Plywood cabinet box",
+    imageAlt: "Painted MDF sample",
   },
   {
-    slug: "melamine",
-    name: "Melamine",
-    summary:
-      "Affordable, easy-to-clean finish that works well for closets and modern cabinetry.",
+    slug: "wood-veneer",
+    name: "Wood Veneer",
+    summary: "The look of real wood grain at a more accessible price.",
     image: "/images/materials/placeholder.jpg",
-    imageAlt: "Melamine panel sample",
+    imageAlt: "Wood veneer sample",
+  },
+  {
+    slug: "high-gloss-lacquer",
+    name: "High-Gloss Lacquer",
+    summary: "A sleek, reflective finish for modern kitchens.",
+    image: "/images/materials/placeholder.jpg",
+    imageAlt: "High-gloss lacquer sample",
+  },
+  {
+    slug: "quartz",
+    name: "Quartz",
+    summary: "Durable, low-maintenance countertops in many colours.",
+    image: "/images/materials/placeholder.jpg",
+    imageAlt: "Quartz sample",
+  },
+  {
+    slug: "soft-close-hardware",
+    name: "Soft-Close Hardware",
+    summary: "Hinges and drawer runners that close quietly every time.",
+    image: "/images/materials/placeholder.jpg",
+    imageAlt: "Soft-close hinge",
   },
 ];
