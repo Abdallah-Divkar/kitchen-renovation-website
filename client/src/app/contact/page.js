@@ -5,7 +5,11 @@ import Container from "@/components/ui/Container";
 import { contactCopy } from "@/data/contact";
 import QuoteForm from "@/components/contact/QuoteForm";
 
-export const metadata = { title: "Contact Us" };
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Request a free quote or visit our showroom. Walk-ins welcome, no appointment needed.",
+};
 
 export default function ContactPage() {
   const { title, subtitle } = contactCopy.hero;

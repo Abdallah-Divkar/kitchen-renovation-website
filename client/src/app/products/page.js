@@ -6,7 +6,11 @@ import Section from "@/components/ui/Section";
 import { materials, materialsCopy } from "@/data/materials";
 import { products, productsCopy } from "@/data/products";
 
-export const metadata = { title: "Products" };
+export const metadata = {
+  title: "Products",
+  description:
+    "Custom kitchen cabinets, bathroom vanities, closets and wardrobes, and countertops, plus the materials and finishes we work with.",
+};
 
 export default function ProductsPage() {
   return (

@@ -7,7 +7,11 @@ import PageHero from "@/components/shared/PageHero";
 import QuoteBand from "@/components/shared/QuoteBand";
 import { site } from "@/data/site";
 
-export const metadata = { title: "About Us" };
+export const metadata = {
+  title: "About Us",
+  description:
+    "Meet A-One Kitchen: our story, what we stand for, and our showroom in Scarborough.",
+};
 
 export default function AboutPage() {
   const since = site.established ? ` since ${site.established}` : "";

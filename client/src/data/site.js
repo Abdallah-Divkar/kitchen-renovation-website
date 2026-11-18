@@ -15,6 +15,7 @@
  * @property {{label: string, href: string}[]} social  Only keep the ones the client has
  * @property {string} established  Year the business started, e.g. "1975". "" hides it everywhere
  * @property {string} shortDescription  One line for the footer
+ * @property {string} url  Public address of the site, no trailing slash. Placeholder until the domain is chosen
  */
 
 const address = {
@@ -37,6 +38,7 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 /** @type {SiteInfo} */
 export const site = {
   name: "A-One Kitchen",
+  url: "https://www.example.com", // TODO: replace with the real domain before launch (2.12)
   tagline: "Custom Cabinetry & Renovations",
   shortDescription:
     "Custom cabinetry and kitchen renovations, built in-house and installed across the GTA.", // TODO: client to confirm ("built in-house")
