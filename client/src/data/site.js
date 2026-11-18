@@ -16,6 +16,7 @@
  * @property {string} established  Year the business started, e.g. "1975". "" hides it everywhere
  * @property {string} shortDescription  One line for the footer
  * @property {string} url  Public address of the site, no trailing slash. Placeholder until the domain is chosen
+ * @property {{days: string[], opens: string, closes: string}[]} openingHours  Machine-readable hours for Google. Keep in sync with hours
  */
 
 const address = {
@@ -57,6 +58,21 @@ export const site = {
   hours: [
     { days: "Monday - Saturday", hours: "8 am - 7 pm" },
     { days: "Sunday", hours: "Closed" },
+  ],
+  // Same hours as above, in the format Google reads. Keep the two in sync.
+  openingHours: [
+    {
+      days: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "08:00",
+      closes: "19:00",
+    },
   ],
   social: [
     { label: "Instagram", href: "#" }, // TODO: client to send real links

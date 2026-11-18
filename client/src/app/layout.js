@@ -4,6 +4,7 @@ import { site } from "@/data/site"; //The buisness name will added there, from i
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ShowroomActions from "@/components/layout/ShowroomActions";
+import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
 
 const body = Inter({
   variable: "--font-body",
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
         <Footer />
 
         <ShowroomActions />
+        <LocalBusinessJsonLd />
       </body>
     </html>
   );
