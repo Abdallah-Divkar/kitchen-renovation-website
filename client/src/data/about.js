@@ -1,3 +1,5 @@
+import { cities } from "./cities";
+
 /**
  * @typedef {Object} Reason
  * @property {string} title
@@ -12,60 +14,94 @@
 
 /**
  * @typedef {Object} Stat
- * @property {string} value         Display string, e.g. "15+"
+ * @property {string} value         Display string, e.g. "15+". "TODO" hides the stat.
  * @property {string} label
  */
 
+/** Copy used only by the About page. Business details come from site.js. */
+export const aboutCopy = {
+  story: {
+    eyebrow: "Our story",
+    title: "Built in our own workshop",
+    // TODO: client to provide the real story
+    text: "How the business started, what we specialize in and what makes us different: in-house manufacturing, attention to detail and customer care.",
+    image: "/images/workshop/placeholder.jpg",
+    imageAlt: "Owner or team photo",
+  },
+  whyChooseUs: {
+    eyebrow: "Why A-One",
+    title: "Why Choose Us",
+    subtitle: "What clients get when they work with us.",
+  },
+  values: {
+    eyebrow: "Our values",
+    title: "What We Stand For",
+    subtitle: "Three things we never compromise on.",
+  },
+  showroom: {
+    eyebrow: "Visit us",
+    title: "See it in person",
+    image: "/images/showroom/placeholder.jpg",
+    imageAlt: "Our showroom",
+  },
+};
+
 /**
- * "Why choose us" (Home page). Reasons below are examples from the client
- * checklist; the client confirms the real 3-4.
+ * Why choose us (About page). Wording is from Figma; the client confirms
+ * the real 3-4 reasons.
  * @type {Reason[]}
  */
 export const whyChooseUs = [
   {
-    title: "Built in-house",
-    description: "TODO: client to confirm (own manufacturing).",
+    title: "In-House Manufacturing",
+    // TODO: client to confirm (own manufacturing)
+    description:
+      "We build our own cabinets, so we control quality and timelines.",
   },
   {
-    title: "Quality craftsmanship",
-    description: "TODO: client to provide.",
+    title: "Quality Materials",
+    // TODO: client to confirm
+    description: "Durable materials and finishes chosen to last.",
   },
   {
-    title: "On-time delivery",
-    description: "TODO: client to provide.",
+    title: "Years of Experience",
+    // TODO: client to confirm years and wording
+    description: "Kitchens designed, built and installed across the GTA.",
   },
   {
-    title: "Warranty",
-    description: "TODO: client to confirm warranty length.",
+    title: "Clear Process",
+    // TODO: client to confirm
+    description: "Transparent quotes and timelines from start to finish.",
   },
 ];
 
 /**
- * Company values (About page).
+ * Company values (About page). Wording is from Figma; the client confirms.
  * @type {Value[]}
  */
 export const values = [
   {
     title: "Craftsmanship",
-    description: "TODO: client to provide.",
+    description: "Every cabinet is built with care and precision.",
   },
   {
     title: "Honesty",
-    description: "TODO: client to provide.",
+    description: "Clear quotes, clear timelines, no surprises.",
   },
   {
-    title: "Customer first",
-    description: "TODO: client to provide.",
+    title: "Customer First",
+    description: "We design around how you live and cook.",
   },
 ];
 
 /**
- * Stats row (About page, possibly Home).
+ * Stats row (About page). A value of "TODO" hides that stat, so the page
+ * never shows placeholder numbers. The year established is site.established.
  * @type {Stat[]}
  */
 export const stats = [
   { value: "TODO", label: "Years of experience" },
-  { value: "TODO", label: "Projects completed" },
-  { value: "1975", label: "Year established" }, //TODO client to confirm
-  { value: "TODO", label: "Warranty" },
+  { value: "TODO", label: "Kitchens completed" },
+  { value: String(cities.length), label: "GTA cities served" },
+  { value: "TODO", label: "Built in-house" }, // Figma shows "100%": client must confirm first
 ];

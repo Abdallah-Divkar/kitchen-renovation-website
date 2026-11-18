@@ -1,7 +1,6 @@
 /**
  * Copy used only by the Home page. The hero eyebrow is site.tagline (data/site.js);
- * the reviews live in data/testimonials.js. whyChooseUs stays here until task 2.7
- * moves that section to About.
+ * the reviews live in data/testimonials.js.
  */
 export const homeCopy = {
   hero: {
@@ -13,7 +12,7 @@ export const homeCopy = {
   },
   intro: {
     eyebrow: "About us",
-    // The Intro adds "since <year>" from the "Year established" stat in about.js
+    // The Intro adds "since <year>" from site.established (data/site.js)
     heading: "Custom kitchens, built in the GTA",
     // TODO: client to confirm the intro wording
     text: "Every cabinet is made in our own workshop, so we control the quality and the timeline from the first sketch to the final installation.",
@@ -36,9 +35,6 @@ export const homeCopy = {
   testimonials: {
     eyebrow: "Reviews",
     title: "What Our Clients Say",
-  },
-  whyChooseUs: {
-    title: "Why Choose Us",
   },
   areas: {
     eyebrow: "Where we work",
