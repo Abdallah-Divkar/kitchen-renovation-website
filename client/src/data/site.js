@@ -13,6 +13,7 @@
  * @property {string} visitNote      Shown with the showroom details
  * @property {{days: string, hours: string}[]} hours
  * @property {{label: string, href: string}[]} social  Only keep the ones the client has
+ * @property {string} established  Year the business started, e.g. "1975". "" hides it everywhere
  */
 
 const address = {
@@ -36,6 +37,7 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 export const site = {
   name: "A-One Kitchen",
   tagline: "Custom Cabinetry & Renovations",
+  established: "1975", // TODO: client to confirm the year
   description:
     "Transform your home with beautifully designed custom cabinetry and expertly executed kitchen renovations.\nFrom concept and manufacturing to installation and finishing, A-One Kitchen helps bring your vision to life.",
   phone: "(647) 642-7751",

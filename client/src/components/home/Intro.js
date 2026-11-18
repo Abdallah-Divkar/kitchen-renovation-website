@@ -1,7 +1,7 @@
 import Link from "next/link";
 import CardImage from "@/components/shared/CardImage";
 import Section from "@/components/ui/Section";
-import { stats } from "@/data/about";
+import { site } from "@/data/site";
 import { homeCopy } from "@/data/home";
 import { navLinks } from "@/data/nav";
 
@@ -10,11 +10,7 @@ const focusRing =
 
 export default function Intro() {
   const { eyebrow, heading, text, linkLabel, image, imageAlt } = homeCopy.intro;
-
-  const established = stats.find((stat) => stat.label === "Year established");
-  const year = /^\d{4}$/.test(established?.value ?? "")
-    ? established.value
-    : "";
+  const year = site.established;
   const aboutLink = navLinks.find((link) => link.href === "/about");
 
   return (
