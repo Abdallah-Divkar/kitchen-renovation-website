@@ -4,6 +4,7 @@ import { site } from "@/data/site"; //The buisness name will added there, from i
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ShowroomActions from "@/components/layout/ShowroomActions";
+import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
 
 const body = Inter({
   variable: "--font-body",
@@ -24,11 +25,18 @@ export const viewport = {
 };
 
 export const metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: site.name,
+    default: `${site.name} | ${site.tagline}`,
     template: `%s | ${site.name}`, //Getting the name from site.js file, so that it can be used in other places as well. MQ
   },
-  description: "TODO: client description",
+  description: `Custom kitchen cabinets, bathroom vanities, closets and countertops, made and installed across the GTA. Visit our ${site.address.city} showroom.`,
+  openGraph: {
+    siteName: site.name,
+    type: "website",
+    locale: "en_CA",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }) {
@@ -58,6 +66,7 @@ export default function RootLayout({ children }) {
         <Footer />
 
         <ShowroomActions />
+        <LocalBusinessJsonLd />
       </body>
     </html>
   );
