@@ -9,6 +9,19 @@
  * @property {boolean} [featured]  Shown in the Featured Gallery on Home
  */
 
+/** Copy used only by the Gallery page. */
+export const galleryCopy = {
+  hero: {
+    title: "Our Gallery",
+    subtitle:
+      "Kitchens, vanities, closets and countertops we’ve designed, built and installed across the GTA.",
+  },
+  ending: {
+    title: "Like what you see?",
+    text: "See the finishes in person at our Scarborough showroom, or get a free quote.",
+  },
+};
+
 /** Filter options for the gallery page. */
 export const galleryCategories = [
   { value: "all", label: "All" },
