@@ -175,7 +175,7 @@ export default function Carousel({
         ref={trackRef}
         tabIndex={scrollable ? 0 : undefined}
         className={cn(
-          "-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-5 overflow-x-auto overscroll-x-contain px-4 sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:-mx-8 lg:scroll-px-8 lg:px-8",
+          "relative -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-5 overflow-x-auto overscroll-x-contain px-4 sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:-mx-8 lg:scroll-px-8 lg:px-8",
           "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
           focusRing,
         )}
