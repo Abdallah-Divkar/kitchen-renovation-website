@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 import { contactCopy } from "@/data/contact";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
-import MapLink from "./MapLink";
+import ShowroomMap from "./ShowroomMap";
 
 const button = "px-7! py-3.5! text-[15px]!";
 
@@ -55,7 +55,7 @@ export default function VisitShowroom({ className }) {
           </div>
         </div>
 
-        <MapLink className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[27.5rem]" />
+        <ShowroomMap className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[27.5rem]" />
       </Container>
     </section>
   );
