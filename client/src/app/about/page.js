@@ -21,6 +21,8 @@ export default function AboutPage() {
       <PageHero
         title={`About ${site.name}`}
         subtitle={`Custom cabinetry and kitchen renovations in the GTA${since}.`}
+        // AI-generated stand-in (Figma), same kitchen as the Home hero
+        image="/images/heroes/about1.jpg"
         breadcrumbs={[{ label: "About Us" }]}
       />
       <OurStory />

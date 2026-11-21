@@ -12,13 +12,14 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  const { title, subtitle } = contactCopy.hero;
+  const { title, subtitle, image } = contactCopy.hero;
 
   return (
     <>
       <PageHero
         title={title}
         subtitle={subtitle}
+        image={image}
         breadcrumbs={[{ label: "Contact Us" }]}
       />
 

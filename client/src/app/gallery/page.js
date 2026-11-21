@@ -18,6 +18,7 @@ export default function GalleryPage() {
       <PageHero
         title={hero.title}
         subtitle={hero.subtitle}
+        image={hero.image}
         breadcrumbs={[{ label: "Gallery" }]}
       />
 

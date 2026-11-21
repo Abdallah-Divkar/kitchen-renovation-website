@@ -49,6 +49,8 @@ export const productsCopy = {
     title: "Our Products",
     subtitle:
       "Custom-made in our own shop and installed across Toronto and the GTA.",
+    // AI-generated stand-in (Figma), same kitchen as the Home hero
+    image: "/images/heroes/products.jpg",
   },
   grid: {
     eyebrow: "What we make",
