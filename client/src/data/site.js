@@ -10,6 +10,7 @@
  * @property {{street: string, unit: string, city: string, province: string, postalCode: string}} address
  * @property {string} directionsUrl  Google Maps directions to the showroom
  * @property {string} mapUrl         The showroom on Google Maps
+ * @property {string} mapEmbedUrl    The map shown on the Contact page
  * @property {string} visitNote      Shown with the showroom details
  * @property {{days: string, hours: string}[]} hours
  * @property {{label: string, href: string}[]} social  Only keep the ones the client has
@@ -35,6 +36,9 @@ const mapQuery = encodeURIComponent(
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
 // Opens the showroom's location on Google Maps (used by the map box on Contact)
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+// The live map on Contact. TODO: once we have the client's Google Business Profile,
+// replace this with the "Share → Embed a map" link from his listing (shows his name).
+const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&z=15&output=embed`;
 
 /** @type {SiteInfo} */
 export const site = {
@@ -53,6 +57,7 @@ export const site = {
   address,
   directionsUrl,
   mapUrl,
+  mapEmbedUrl,
   visitNote: "Walk-ins welcome, no appointment needed",
   logo: { src: "/images/brand/aone-logo-white.svg", width: 1168, height: 386 },
   hours: [
