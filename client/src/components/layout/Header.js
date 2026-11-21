@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { PhoneIcon } from "@/components/ui/Icons";
-import { quoteLink } from "@/data/nav";
+import { navLinks, quoteLink } from "@/data/nav";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
 import Logo from "./Logo";
@@ -15,8 +15,10 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 
 export default function Header() {
-  // On Home the header floats over the hero photo; on every other page it's solid.
-  const overHero = usePathname() === "/";
+  // Every page in the menu opens with a photo (Home's hero, or a PageHero with an
+  // image), so the header floats over it. Other pages (404, /ui-test) stay solid.
+  const pathname = usePathname();
+  const overHero = navLinks.some((link) => link.href === pathname);
 
   return (
     <header

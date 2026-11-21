@@ -4,6 +4,8 @@ export const contactCopy = {
     title: "Request a Free Quote",
     subtitle:
       "Tell us about your project and we’ll get back to you within 1 business day. Or visit the showroom, no appointment needed.",
+    // AI-generated stand-in (Figma), same kitchen as the Home hero
+    image: "/images/heroes/contact1.jpg",
   },
   info: {
     title: "Contact Information",

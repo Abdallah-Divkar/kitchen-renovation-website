@@ -15,6 +15,8 @@ export const galleryCopy = {
     title: "Our Gallery",
     subtitle:
       "Kitchens, vanities, closets and countertops we’ve designed, built and installed across the GTA.",
+    // AI-generated stand-in (Figma), same kitchen as the Home hero
+    image: "/images/heroes/gallery.jpg",
   },
   ending: {
     title: "Like what you see?",

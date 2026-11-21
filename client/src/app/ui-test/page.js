@@ -40,7 +40,6 @@ export default function UiTestPage() {
         title="Our Products"
         subtitle="PageHero with breadcrumb, subtitle and the quote button."
         breadcrumbs={[{ label: "Products" }]}
-        showQuoteButton
       />
 
       <Section alt>

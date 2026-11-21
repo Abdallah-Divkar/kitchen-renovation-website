@@ -15,11 +15,7 @@ export const metadata = {
 export default function ProductsPage() {
   return (
     <>
-      <PageHero
-        {...productsCopy.hero}
-        breadcrumbs={[{ label: "Products" }]}
-        showQuoteButton
-      />
+      <PageHero {...productsCopy.hero} breadcrumbs={[{ label: "Products" }]} />
 
       <Section {...productsCopy.grid}>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
