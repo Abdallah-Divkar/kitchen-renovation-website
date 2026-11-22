@@ -1,6 +1,7 @@
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site"; //The buisness name will added there, from it the name will be used elsewhere. MQ
+import { allowIndexing } from "@/lib/indexing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ShowroomActions from "@/components/layout/ShowroomActions";
@@ -37,6 +38,9 @@ export const metadata = {
     locale: "en_CA",
   },
   twitter: { card: "summary_large_image" },
+
+  // Before launch every page also says "don't index" (see lib/indexing.js).
+  robots: allowIndexing ? undefined : { index: false, follow: false },
 };
 
 export default function RootLayout({ children }) {

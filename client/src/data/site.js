@@ -40,10 +40,17 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 // replace this with the "Share → Embed a map" link from his listing (shows his name).
 const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&z=15&output=embed`;
 
+// The site's own address, for the sitemap and link previews. On Vercel it fills
+// itself in: the vercel.app address now, the real domain once it's connected.
+const productionHost = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
+const url = productionHost
+  ? `https://${productionHost}`
+  : "http://localhost:3000";
+
 /** @type {SiteInfo} */
 export const site = {
   name: "A-One Kitchen",
-  url: "https://www.example.com", // TODO: replace with the real domain before launch (2.12)
+  url,
   tagline: "Custom Cabinetry & Renovations",
   shortDescription:
     "Custom cabinetry and kitchen renovations, built in-house and installed across the GTA.", // TODO: client to confirm ("built in-house")
