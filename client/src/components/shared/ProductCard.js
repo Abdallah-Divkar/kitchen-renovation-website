@@ -2,9 +2,10 @@ import Link from "next/link";
 import Card from "@/components/ui/Card";
 import { cn } from "@/lib/cn";
 import CardImage from "./CardImage";
+import LinkArrow from "@/components/ui/LinkArrow";
 
 const linkClass =
-  "text-primary mt-3 inline-block text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  "group text-primary mt-3 inline-block text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 export default function ProductCard({
   name,
@@ -62,8 +63,7 @@ export default function ProductCard({
           className={cn(linkClass, compactOnMobile && "max-sm:hidden")}
         >
           {linkLabel}
-          <span className="sr-only"> about {name}</span>
-          <span aria-hidden="true"> →</span>
+          <span className="sr-only"> about {name}</span> <LinkArrow />
         </Link>
       )}
     </>

@@ -6,6 +6,7 @@ import { galleryItems, getCategoryLabel } from "@/data/gallery";
 import { homeCopy } from "@/data/home";
 import Link from "next/link";
 import { navLinks } from "@/data/nav";
+import LinkArrow from "@/components/ui/LinkArrow";
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
@@ -46,9 +47,9 @@ export default function FeaturedProjects() {
       {galleryLink && (
         <Link
           href={galleryLink.href}
-          className={`text-primary mt-8 inline-block rounded-sm text-[15px] font-medium underline-offset-4 hover:underline ${focusRing}`}
+          className={`group text-primary mt-8 inline-block rounded-sm text-[15px] font-medium underline-offset-4 hover:underline ${focusRing}`}
         >
-          See all projects <span aria-hidden="true">→</span>
+          See all projects <LinkArrow />
         </Link>
       )}
     </Section>

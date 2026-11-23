@@ -5,6 +5,7 @@ import { navLinks } from "@/data/nav";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
 import Logo from "./Logo";
+import LinkArrow from "@/components/ui/LinkArrow";
 
 // Hard-coded for now: Cache Components may reject reading the current date here
 const copyrightYear = 2026;
@@ -79,9 +80,9 @@ export default function Footer() {
                   href={site.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={cn("text-primary", linkClass)}
+                  className={cn("group text-primary", linkClass)}
                 >
-                  Get Directions <span aria-hidden="true">→</span>
+                  Get Directions <LinkArrow />
                   <span className="sr-only"> (opens Google Maps)</span>
                 </a>
               </li>
