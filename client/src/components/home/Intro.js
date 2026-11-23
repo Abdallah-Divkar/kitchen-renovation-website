@@ -4,6 +4,7 @@ import Section from "@/components/ui/Section";
 import { site } from "@/data/site";
 import { homeCopy } from "@/data/home";
 import { navLinks } from "@/data/nav";
+import LinkArrow from "@/components/ui/LinkArrow";
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
@@ -33,9 +34,9 @@ export default function Intro() {
             <Link
               href={aboutLink.href}
               // Change 3: the link is brass
-              className={`text-primary rounded-sm text-[15px] font-medium underline-offset-4 hover:underline ${focusRing}`}
+              className={`group text-primary rounded-sm text-[15px] font-medium underline-offset-4 hover:underline ${focusRing}`}
             >
-              {linkLabel} <span aria-hidden="true">→</span>
+              {linkLabel} <LinkArrow />
             </Link>
           )}
         </div>
